@@ -7,6 +7,12 @@
     height: 512px;
     border-radius: 32px;
     background-color: rgb(190, 198, 202);
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=cdd2d8&c2=bfc8cc&gt=l&gd=dtt
+*/
+background: #CDD2D8;
+background: linear-gradient(180deg, #CDD2D8, #BFC8CC);
 }
 
 .icon {
