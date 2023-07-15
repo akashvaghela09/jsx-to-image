@@ -1,37 +1,45 @@
 import './App.css';
 import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
-import { Banner } from './components/Banner/Banner';
-// import { WikipediaDarkMode } from './components/Wiki/WikipediaDarkMode';
-// import { PromptBuddy } from './components/PromptBuddy/PromptBuddy';
+import { WikipediaDarkMode } from "./features/icon-generator/Wiki/WikipediaDarkMode";
+import { PromptBuddy } from "./features/icon-generator/PromptBuddy/PromptBuddy";
 
 function App() {
 
-  const handleDownload = () => {
-    const element = document.getElementById("canvas");
+  const handleDownload = (list) => {
+    for (let i = 0; i < list.length; i++) {
+      const element = document.getElementById(list[i]);
 
-    html2canvas(element).then(canvas => {
-      canvas.toBlob(blob => {
-        saveAs(blob, 'image.png');
+      html2canvas(element, {
+        backgroundColor: null, // Set the background color to null for transparency
+        useCORS: true // Enable cross-origin resource sharing if required
+      }).then(canvas => {
+        canvas.toBlob(blob => {
+          saveAs(blob, `${list[i]}.png`);
+        }, 'image/png');
       });
-    });
+    }
   };
 
   const DownloadButton = () => {
+
+    const downloadList = [
+      "icon512", // for icons
+    ];
+
     return (
-        <button className='download_btn' onClick={handleDownload}>Download</button>
+      <button className='download_btn' onClick={() => handleDownload(downloadList)}>Download</button>
     )
   }
 
   return (
-      <div className="App">
-        <DownloadButton />
-        <div id="canvas">
-          {/* <WikipediaDarkMode /> */}
-          {/* <PromptBuddy /> */}
-          <Banner />
-        </div>
+    <div className="App">
+      <DownloadButton />
+      <div id="canvas">
+        {/* <WikipediaDarkMode /> */}
+        {/* <PromptBuddy /> */}
       </div>
+    </div>
   );
 }
 
