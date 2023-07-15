@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './WikipediaDarkMode.module.css';
-import { FcWikipedia } from 'react-icons/fc';
+import { BsWikipedia } from 'react-icons/bs';
 
 const WikipediaDarkMode = () => {
+
     return (
-        <div className={styles.wrapper}>
-            <FcWikipedia className={styles.icon}/>
-            {/* <p className={styles.text}>Dark Mode</p> */}
+        <div className={styles.wrapper} id="icon512">
+                <BsWikipedia className={styles.icon} />
         </div>
     )
 }
