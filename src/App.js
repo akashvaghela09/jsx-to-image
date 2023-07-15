@@ -3,6 +3,8 @@ import html2canvas from 'html2canvas';
 import { saveAs } from 'file-saver';
 import { WikipediaDarkMode } from "./features/icon-generator/Wiki/WikipediaDarkMode";
 import { PromptBuddy } from "./features/icon-generator/PromptBuddy/PromptBuddy";
+import { WikiPromo } from './features/promo-poster/Wiki/WikiPromo';
+import { PromptBuddyPromo } from './features/promo-poster/PromptBuddy/PromptBuddyPromo';
 
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
 
     const downloadList = [
       "icon512", // for icons
+      // "promo-poster"
     ];
 
     return (
@@ -36,8 +39,10 @@ function App() {
     <div className="App">
       <DownloadButton />
       <div id="canvas">
-        {/* <WikipediaDarkMode /> */}
+        <WikipediaDarkMode />
         {/* <PromptBuddy /> */}
+        {/* <WikiPromo /> */}
+        {/* <PromptBuddyPromo /> */}
       </div>
     </div>
   );
