@@ -1,0 +1,35 @@
+.App {
+  min-height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download_btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #606cda2c;
+  border: 1px solid #7b7b7b3c;
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.download_btn:hover {
+  background-color: #606cda4a;
+}
+
+#canvas {
+  border: 1px solid rgba(128, 128, 128, 0.342);
+  background-color: #ffffff;
+  width: fit-content;
+  height: fit-content;
+}
